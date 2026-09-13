@@ -36,7 +36,7 @@ function Contact() {
         >
 
           <a
-            href="mailto:kashay029@gmail.com"
+            href="mailto:akashaurooj542@gmail.com"
             className="contact-item"
           >
             <span className="contact-label">
