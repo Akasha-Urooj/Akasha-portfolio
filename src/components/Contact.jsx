@@ -44,7 +44,7 @@ function Contact() {
             </span>
 
             <span className="contact-value">
-              kashay029@gmail.com
+              akashaurooj542@gmail.com
             </span>
 
             <span className="contact-arrow">
