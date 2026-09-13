@@ -1,0 +1,1098 @@
+/* =========================================================
+   AKASHA PORTFOLIO — HOME PAGE
+   ========================================================= */
+
+.home {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 72% 48%, rgba(125, 45, 220, 0.10), transparent 27%),
+    radial-gradient(circle at 15% 80%, rgba(100, 40, 180, 0.06), transparent 25%),
+    #050507;
+  color: #f3edf8;
+}
+
+/* =========================================================
+   CODE BACKGROUND
+   ========================================================= */
+
+.code-rain {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.55;
+}
+
+.code-column {
+  position: absolute;
+  top: -20%;
+  width: 11%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: codeFall 18s linear infinite;
+  white-space: nowrap;
+}
+
+.code-column span {
+  color: rgba(185, 140, 255, 0.16);
+  font-family: "Space Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+}
+
+@keyframes codeFall {
+  from {
+    transform: translateY(-10%);
+  }
+
+  to {
+    transform: translateY(125%);
+  }
+}
+
+.code-rain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 5, 7, 0.8) 0%,
+      transparent 30%,
+      transparent 70%,
+      rgba(5, 5, 7, 0.7) 100%
+    ),
+    radial-gradient(
+      circle at center,
+      transparent 20%,
+      rgba(5, 5, 7, 0.6) 100%
+    );
+}
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.home-nav {
+  position: relative;
+  z-index: 20;
+
+  width: min(1400px, calc(100% - 80px));
+  height: 82px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.logo {
+  color: #eee6f7;
+  text-decoration: none;
+
+  font-family: "Space Mono", monospace;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+
+  transition: 0.3s ease;
+}
+
+.logo:hover {
+  color: #c59aff;
+  text-shadow: 0 0 18px rgba(168, 85, 247, 0.45);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.nav-links a {
+  position: relative;
+
+  color: #77717e;
+  text-decoration: none;
+
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.8px;
+
+  transition: 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+
+  width: 0;
+  height: 1px;
+
+  background: #b98cff;
+  box-shadow: 0 0 8px rgba(185, 140, 255, 0.7);
+
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #e9dafa;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-socials {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-socials a {
+  color: #817989;
+  text-decoration: none;
+
+  font-family: "Space Mono", monospace;
+  font-size: 9px;
+  letter-spacing: 0.5px;
+
+  transition: 0.3s ease;
+}
+
+.nav-socials a:hover {
+  color: #c7a3ef;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.home-hero {
+  position: relative;
+  z-index: 10;
+
+  width: min(1400px, calc(100% - 80px));
+  min-height: calc(100vh - 150px);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  align-items: center;
+}
+
+/* =========================================================
+   HERO COPY
+   ========================================================= */
+
+.hero-copy {
+  position: relative;
+  z-index: 15;
+  padding-bottom: 30px;
+}
+
+.availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-bottom: 28px;
+
+  color: #9e96a6;
+
+  font-family: "Space Mono", monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+
+  background: #c29bff;
+  box-shadow:
+    0 0 8px #a855f7,
+    0 0 18px rgba(168, 85, 247, 0.55);
+
+  animation: statusPulse 2s ease-in-out infinite;
+}
+
+@keyframes statusPulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(0.9);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+.hero-kicker {
+  margin: 0 0 16px;
+
+  color: #8c8395;
+
+  font-family: "Space Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 2.5px;
+}
+
+.hero-copy h1 {
+  margin: 0;
+
+  font-family: "Inter", sans-serif;
+  font-size: clamp(58px, 6.3vw, 96px);
+  font-weight: 800;
+  line-height: 0.91;
+  letter-spacing: -5px;
+
+  color: #f4eef8;
+}
+
+.hero-copy h1 span,
+.hero-copy h1 strong {
+  display: block;
+}
+
+.hero-copy h1 span {
+  color: #b98cff;
+  text-shadow:
+    0 0 25px rgba(155, 77, 255, 0.15),
+    0 0 60px rgba(155, 77, 255, 0.08);
+}
+
+.hero-copy h1 strong {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(214, 190, 238, 0.6);
+}
+
+.hero-description {
+  max-width: 520px;
+  margin: 30px 0 0;
+
+  color: #827b89;
+
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  margin-top: 34px;
+}
+
+.primary-action,
+.secondary-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 45px;
+  padding: 0 20px;
+
+  text-decoration: none;
+
+  font-family: "Space Mono", monospace;
+  font-size: 9px;
+  letter-spacing: 1px;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+.primary-action {
+  gap: 13px;
+
+  color: #100914;
+  background: #c19aff;
+
+  box-shadow: 0 0 25px rgba(155, 77, 255, 0.12);
+}
+
+.primary-action span {
+  font-size: 15px;
+}
+
+.primary-action:hover {
+  transform: translateY(-3px);
+  background: #d0b2ff;
+  box-shadow: 0 0 30px rgba(155, 77, 255, 0.25);
+}
+
+.secondary-action {
+  color: #b0a7b6;
+
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.secondary-action:hover {
+  transform: translateY(-3px);
+  color: #dfd0ed;
+  border-color: rgba(185, 140, 255, 0.4);
+}
+
+/* =========================================================
+   BRAIN STAGE
+   ========================================================= */
+
+.brain-stage {
+  position: relative;
+
+  width: 620px;
+  height: 570px;
+
+  justify-self: end;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* subtle technical grid */
+
+.brain-grid {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+
+  opacity: 0.18;
+
+  background-image:
+    linear-gradient(
+      rgba(185, 140, 255, 0.08) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(185, 140, 255, 0.08) 1px,
+      transparent 1px
+    );
+
+  background-size: 38px 38px;
+
+  mask-image: radial-gradient(
+    circle,
+    black 0%,
+    transparent 72%
+  );
+
+  -webkit-mask-image: radial-gradient(
+    circle,
+    black 0%,
+    transparent 72%
+  );
+}
+
+/* =========================================================
+   BRAIN GLOW
+   ========================================================= */
+
+.brain-glow {
+  position: absolute;
+
+  width: 390px;
+  height: 300px;
+
+  border-radius: 50%;
+
+  background: rgba(137, 62, 220, 0.13);
+
+  filter: blur(75px);
+
+  opacity: 0.65;
+}
+
+/* =========================================================
+   BRAIN
+   ========================================================= */
+
+.brain {
+  position: relative;
+
+  width: 390px;
+  height: 300px;
+
+  transform: perspective(900px) rotateY(-8deg) rotateX(2deg);
+
+  filter:
+    drop-shadow(0 0 12px rgba(168, 85, 247, 0.3))
+    drop-shadow(0 0 35px rgba(122, 45, 220, 0.18));
+}
+
+/* brain halves */
+
+.brain-half {
+  position: absolute;
+  top: 0;
+
+  width: 50%;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+/* organic side */
+
+.human-half {
+  left: 0;
+
+  border-radius:
+    58% 12% 12% 55%
+    / 50% 18% 15% 52%;
+
+  background:
+    radial-gradient(
+      circle at 38% 42%,
+      rgba(218, 184, 255, 0.95),
+      rgba(155, 77, 255, 0.72) 48%,
+      rgba(70, 26, 100, 0.85) 100%
+    );
+
+  border: 1px solid rgba(216, 186, 255, 0.48);
+
+  box-shadow:
+    inset -18px 0 30px rgba(25, 8, 40, 0.4),
+    inset 8px 8px 25px rgba(255, 255, 255, 0.08);
+}
+
+/* circuit side */
+
+.circuit-half {
+  right: 0;
+
+  border-radius:
+    12% 58% 55% 12%
+    / 18% 50% 52% 15%;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(43, 16, 63, 0.95),
+      rgba(12, 9, 18, 0.98)
+    );
+
+  border: 1px solid rgba(185, 140, 255, 0.55);
+
+  box-shadow:
+    inset 18px 0 30px rgba(155, 77, 255, 0.13),
+    inset -5px 0 20px rgba(0, 0, 0, 0.8);
+}
+
+/* =========================================================
+   HUMAN BRAIN FOLDS
+   ========================================================= */
+
+.brain-fold {
+  position: absolute;
+
+  height: 11px;
+
+  border: 2px solid rgba(237, 215, 255, 0.5);
+  border-left: none;
+  border-right: none;
+
+  border-radius: 50%;
+
+  transform: rotate(-8deg);
+
+  filter: blur(0.2px);
+
+  opacity: 0.75;
+}
+
+.fold-one {
+  top: 48px;
+  left: 18px;
+  width: 125px;
+}
+
+.fold-two {
+  top: 91px;
+  left: 35px;
+  width: 145px;
+  transform: rotate(7deg);
+}
+
+.fold-three {
+  top: 136px;
+  left: 15px;
+  width: 120px;
+  transform: rotate(-5deg);
+}
+
+.fold-four {
+  top: 181px;
+  left: 34px;
+  width: 130px;
+  transform: rotate(8deg);
+}
+
+.fold-five {
+  top: 222px;
+  left: 12px;
+  width: 108px;
+  transform: rotate(-7deg);
+}
+
+/* =========================================================
+   CIRCUITS
+   ========================================================= */
+
+.circuit-line {
+  position: absolute;
+
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #b98cff 20%,
+    #dfc7ff 80%,
+    transparent
+  );
+
+  box-shadow: 0 0 8px rgba(185, 140, 255, 0.7);
+
+  transform-origin: left center;
+}
+
+.line-one {
+  top: 67px;
+  left: 25px;
+  width: 125px;
+  transform: rotate(-14deg);
+}
+
+.line-two {
+  top: 118px;
+  left: 40px;
+  width: 150px;
+  transform: rotate(5deg);
+}
+
+.line-three {
+  top: 168px;
+  left: 22px;
+  width: 130px;
+  transform: rotate(-6deg);
+}
+
+.line-four {
+  top: 215px;
+  left: 42px;
+  width: 115px;
+  transform: rotate(10deg);
+}
+
+.circuit-node {
+  position: absolute;
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #d9c0ff;
+
+  box-shadow:
+    0 0 8px #b98cff,
+    0 0 18px rgba(155, 77, 255, 0.9);
+
+  animation: nodePulse 2s ease-in-out infinite;
+}
+
+.node-one {
+  top: 48px;
+  left: 144px;
+}
+
+.node-two {
+  top: 113px;
+  left: 183px;
+  animation-delay: 0.5s;
+}
+
+.node-three {
+  top: 164px;
+  left: 151px;
+  animation-delay: 1s;
+}
+
+.node-four {
+  top: 211px;
+  left: 156px;
+  animation-delay: 1.5s;
+}
+
+@keyframes nodePulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.25);
+  }
+}
+
+/* =========================================================
+   BRAIN CORE
+   ========================================================= */
+
+.brain-core {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 25px;
+  height: 110px;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    90deg,
+    rgba(122, 45, 220, 0.1),
+    rgba(218, 190, 255, 0.8),
+    rgba(122, 45, 220, 0.1)
+  );
+
+  filter: blur(2px);
+
+  box-shadow:
+    0 0 15px rgba(185, 140, 255, 0.6),
+    0 0 40px rgba(155, 77, 255, 0.25);
+
+  animation: corePulse 3s ease-in-out infinite;
+}
+
+@keyframes corePulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: translate(-50%, -50%) scaleY(0.9);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scaleY(1.08);
+  }
+}
+
+/* =========================================================
+   ELECTRIC SPARKS
+   ========================================================= */
+
+.spark {
+  position: absolute;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #e1ccff;
+
+  box-shadow:
+    0 0 7px #d0aaff,
+    0 0 18px #a855f7,
+    0 0 35px rgba(168, 85, 247, 0.8);
+
+  animation: sparkMove 3s ease-in-out infinite;
+}
+
+.spark-one {
+  left: 112px;
+  top: 190px;
+}
+
+.spark-two {
+  left: 220px;
+  top: 105px;
+  animation-delay: 0.7s;
+}
+
+.spark-three {
+  left: 342px;
+  top: 170px;
+  animation-delay: 1.2s;
+}
+
+.spark-four {
+  left: 285px;
+  top: 285px;
+  animation-delay: 1.8s;
+}
+
+.spark-five {
+  left: 405px;
+  top: 230px;
+  animation-delay: 2.2s;
+}
+
+@keyframes sparkMove {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(0.7) translate(0, 0);
+  }
+
+  40% {
+    opacity: 1;
+    transform: scale(1.3) translate(10px, -8px);
+  }
+
+  70% {
+    opacity: 0.8;
+    transform: scale(1) translate(-5px, 9px);
+  }
+}
+
+/* =========================================================
+   BRAIN LABEL
+   ========================================================= */
+
+.brain-label {
+  position: absolute;
+
+  right: 5px;
+  bottom: 65px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  padding-left: 13px;
+
+  border-left: 1px solid rgba(185, 140, 255, 0.45);
+
+  color: #81778d;
+
+  font-family: "Space Mono", monospace;
+  font-size: 8px;
+  letter-spacing: 2px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   ORBITS
+   ========================================================= */
+
+.brain-orbit {
+  position: absolute;
+
+  width: 470px;
+  height: 210px;
+
+  border: 1px solid rgba(185, 140, 255, 0.1);
+
+  border-radius: 50%;
+
+  transform: rotate(-18deg);
+
+  pointer-events: none;
+}
+
+.orbit-one {
+  animation: orbitRotate 12s linear infinite;
+}
+
+.orbit-two {
+  width: 400px;
+  height: 180px;
+
+  transform: rotate(25deg);
+
+  opacity: 0.55;
+
+  animation: orbitRotateReverse 15s linear infinite;
+}
+
+@keyframes orbitRotate {
+  from {
+    transform: rotate(-18deg);
+  }
+
+  to {
+    transform: rotate(342deg);
+  }
+}
+
+@keyframes orbitRotateReverse {
+  from {
+    transform: rotate(25deg);
+  }
+
+  to {
+    transform: rotate(-335deg);
+  }
+}
+
+/* =========================================================
+   BOTTOM META
+   ========================================================= */
+
+.hero-meta {
+  position: absolute;
+  z-index: 20;
+
+  left: max(40px, calc((100vw - 1400px) / 2));
+  bottom: 25px;
+
+  display: flex;
+  gap: 55px;
+}
+
+.hero-meta div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-meta span {
+  color: #b98cff;
+
+  font-family: "Space Mono", monospace;
+  font-size: 8px;
+}
+
+.hero-meta p {
+  margin: 0;
+
+  color: #696270;
+
+  font-family: "Space Mono", monospace;
+  font-size: 8px;
+  letter-spacing: 1px;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+  .home-nav,
+  .home-hero {
+    width: calc(100% - 50px);
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+
+  .home-hero {
+    grid-template-columns: 1fr 0.9fr;
+  }
+
+  .brain-stage {
+    width: 500px;
+    height: 500px;
+    transform: scale(0.86);
+    transform-origin: center;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(52px, 7vw, 78px);
+  }
+
+  .hero-meta {
+    left: 25px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 750px) {
+  .home {
+    min-height: 100svh;
+    overflow-y: auto;
+  }
+
+  .home-nav {
+    width: calc(100% - 30px);
+    height: 68px;
+  }
+
+  .logo {
+    font-size: 13px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-socials {
+    gap: 13px;
+  }
+
+  .nav-socials a {
+    font-size: 8px;
+  }
+
+  .home-hero {
+    width: calc(100% - 30px);
+
+    min-height: auto;
+    padding: 60px 0 130px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .hero-copy {
+    width: 100%;
+  }
+
+  .availability {
+    margin-bottom: 20px;
+    font-size: 8px;
+  }
+
+  .hero-kicker {
+    font-size: 8px;
+    letter-spacing: 1.7px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(46px, 13vw, 68px);
+    letter-spacing: -3px;
+  }
+
+  .hero-description {
+    max-width: 430px;
+    margin-top: 24px;
+    font-size: 12px;
+  }
+
+  .hero-actions {
+    flex-wrap: wrap;
+    margin-top: 28px;
+  }
+
+  .brain-stage {
+    width: 100%;
+    height: 400px;
+
+    margin-top: 35px;
+
+    transform: scale(0.72);
+    transform-origin: top center;
+  }
+
+  .hero-meta {
+    position: relative;
+
+    left: auto;
+    bottom: auto;
+
+    width: calc(100% - 30px);
+
+    margin: -70px auto 20px;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .hero-meta div {
+    gap: 6px;
+  }
+
+  .hero-meta p {
+    font-size: 7px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 430px) {
+  .home-nav {
+    width: calc(100% - 24px);
+  }
+
+  .home-hero {
+    width: calc(100% - 24px);
+    padding-top: 45px;
+  }
+
+  .hero-copy h1 {
+    font-size: 47px;
+  }
+
+  .hero-description {
+    font-size: 11px;
+    line-height: 1.8;
+  }
+
+  .primary-action,
+  .secondary-action {
+    min-height: 42px;
+    padding: 0 15px;
+    font-size: 8px;
+  }
+
+  .brain-stage {
+    height: 330px;
+    transform: scale(0.58);
+  }
+
+  .hero-meta {
+    width: calc(100% - 24px);
+  }
+
+  .hero-meta p {
+    display: none;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .code-column,
+  .status-dot,
+  .circuit-node,
+  .brain-core,
+  .spark,
+  .orbit-one,
+  .orbit-two {
+    animation: none;
+  }
+}
